@@ -36,3 +36,16 @@
     transform: rotate(360deg);
   }
 }
+
+.flex-parent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.box {
+  width: 300px;
+  background-color: red;
+  margin: 5px;
+  padding: 20px;
+}
