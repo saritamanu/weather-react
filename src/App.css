@@ -44,8 +44,20 @@
 }
 
 .box {
-  width: 300px;
-  background-color: red;
+  width: 290px;
+  height: 316px;
+  background-color: #d9d9d9;
+  border-radius: 20px;
   margin: 5px;
+  margin-top: 15%;
   padding: 20px;
+}
+
+form {
+  text-align: right;
+}
+
+h1 {
+  font-size: 38px;
+  letter-spacing: 8px;
 }
