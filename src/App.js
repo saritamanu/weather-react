@@ -9,6 +9,8 @@ function App() {
 
   function showTemperature(response) {
     setTemperature(Math.round(response.data.main.temp));
+    setDescription(response.data.weather[0].main);
+    console.log(response.data);
   }
 
   function handleSubmit(event) {
@@ -28,8 +30,9 @@ function App() {
         <div className="box">
           <br />
           <br />
-          <h1>{city}</h1>
-          <h2>{temperature}</h2>
+          <h1 style={{ textTransform: "capitalize" }}>{city}</h1>
+          <p>{temperature}°C</p>
+          <p>{description}</p>
         </div>
         <div className="box">
           <form onSubmit={handleSubmit}>
@@ -42,12 +45,7 @@ function App() {
   } else {
     return (
       <div className="flex-parent">
-        <div className="box">
-          <br />
-          <br />
-          <h1></h1>
-          <h2></h2>
-        </div>
+        <div className="box"></div>
         <div className="box">
           <form onSubmit={handleSubmit}>
             <input type="search" onChange={updateCity} />
