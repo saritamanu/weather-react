@@ -6,10 +6,15 @@ function App() {
   let [city, setCity] = useState("");
   let [temperature, setTemperature] = useState(null);
   let [description, setDescription] = useState(null);
+  let [humidity, setHumidity] = useState(null);
+  let [wind, setWind] = useState(null);
 
   function showTemperature(response) {
     setTemperature(Math.round(response.data.main.temp));
     setDescription(response.data.weather[0].main);
+    setHumidity(response.data.main.humidity);
+    setWind(Math.round(response.data.wind.speed));
+
     console.log(response.data);
   }
 
@@ -39,6 +44,8 @@ function App() {
             <input type="search" onChange={updateCity} />
             <input type="submit" value="Search" />
           </form>
+          <p className="humidity">Humidity: {humidity}% </p>
+          <p className="wind">Wind: {wind} km/h</p>
         </div>
       </div>
     );
