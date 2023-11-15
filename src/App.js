@@ -3,6 +3,7 @@ import { useState } from "react";
 import axios from "axios";
 
 function App() {
+  let [date, setDate] = useState(updateDate());
   let [city, setCity] = useState("");
   let [temperature, setTemperature] = useState(null);
   let [description, setDescription] = useState(null);
@@ -24,7 +25,14 @@ function App() {
     let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiId}adde&units=metric`;
     axios.get(url).then(showTemperature);
   }
+  function updateDate() {
+    const today = new Date();
+    const month = today.getMonth() + 1;
+    const year = today.getFullYear();
+    const date = today.getDate();
 
+    return `${date}/${month}/${year}`;
+  }
   function updateCity(event) {
     setCity(event.target.value);
   }
@@ -33,6 +41,7 @@ function App() {
     return (
       <div className="flex-parent">
         <div className="box">
+          <p>{date}</p>
           <br />
           <br />
           <h1 style={{ textTransform: "capitalize" }}>{city}</h1>
