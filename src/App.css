@@ -62,10 +62,16 @@ h1 {
   letter-spacing: 8px;
 }
 
+ul {
+  padding-left: 0px;
+}
 ul li {
   display: inline-block;
-  padding: 10px;
-  height: 70px;
+  text-align: center;
+  padding-top: 10px;
+  margin: 5px;
+  height: 100px;
+  width: 60px;
   border: 1px solid #000000;
   border-radius: 20px;
 }

@@ -60,24 +60,37 @@ function App() {
           <br />
           <ul>
             <li>
+              <img src="./cloudy.png" alt="" />
+              <br />
+              <br />
+              <br />
               Tues
               <br />
               25°C
-              <br />
             </li>
             <li>
+              <img src="./cloudy.png" alt="" />
+              <br />
+              <br />
+              <br />
               Wed
               <br />
               23°C
-              <br />
             </li>
             <li>
+              <img src="./cloudy.png" alt="" />
+              <br />
+              <br />
+              <br />
               Thu
               <br />
               24°C
-              <br />
             </li>
             <li>
+              <img src="./cloudy.png" alt="" />
+              <br />
+              <br />
+              <br />
               Fri
               <br />
               23°C
