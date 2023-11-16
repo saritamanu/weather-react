@@ -55,6 +55,34 @@ function App() {
           </form>
           <p className="humidity">Humidity: {humidity}% </p>
           <p className="wind">Wind: {wind} km/h</p>
+          <br />
+          <br />
+          <br />
+          <ul>
+            <li>
+              Tues
+              <br />
+              25°C
+              <br />
+            </li>
+            <li>
+              Wed
+              <br />
+              23°C
+              <br />
+            </li>
+            <li>
+              Thu
+              <br />
+              24°C
+              <br />
+            </li>
+            <li>
+              Fri
+              <br />
+              23°C
+            </li>
+          </ul>
         </div>
       </div>
     );
