@@ -53,8 +53,13 @@ function App() {
             <input type="search" onChange={updateCity} />
             <input type="submit" value="Search" />
           </form>
-          <p className="humidity">Humidity: {humidity}% </p>
-          <p className="wind">Wind: {wind} km/h</p>
+          <p className="humidity">
+            <b>Humidity:</b> {humidity}%{" "}
+          </p>
+          <p className="wind">
+            <b>Wind: </b>
+            {wind} km/h
+          </p>
           <br />
           <br />
           <br />
