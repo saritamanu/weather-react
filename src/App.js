@@ -27,11 +27,21 @@ function App() {
   }
   function updateDate() {
     const today = new Date();
-    const month = today.getMonth() + 1;
-    const year = today.getFullYear();
-    const date = today.getDate();
+    const hours = today.getHours();
+    const minutes = today.getMinutes();
 
-    return `${date}/${month}/${year}`;
+    const days = [
+      "Sunday",
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday",
+    ];
+
+    const day = days[today.getDay()];
+    return `${day}, ${hours}:${minutes}`;
   }
   function updateCity(event) {
     setCity(event.target.value);
@@ -44,15 +54,24 @@ function App() {
           <p>{date}</p>
           <br />
           <br />
+          <br />
+          <br />
           <h1 style={{ textTransform: "capitalize" }}>{city}</h1>
-          <p>{temperature}°C</p>
-          <p>{description}</p>
+          <p className="temperature">{temperature}°C</p>
+          <p className="description">{description}</p>
         </div>
         <div className="box">
           <form onSubmit={handleSubmit}>
-            <input type="search" onChange={updateCity} />
-            <input type="submit" value="Search" />
+            <input
+              className="search"
+              type="search"
+              onChange={updateCity}
+              placeholder="Search city..."
+            />
+            <input className="submit" type="submit" value="Search" />
           </form>
+          <br />
+          <br />
           <p className="humidity">
             <b>Humidity:</b> {humidity}%{" "}
           </p>
@@ -60,13 +79,11 @@ function App() {
             <b>Wind: </b>
             {wind} km/h
           </p>
-          <br />
-          <br />
+
           <br />
           <ul>
             <li>
               <img src="./cloudy.png" alt="" />
-              <br />
               <br />
               <br />
               Tues
@@ -77,7 +94,6 @@ function App() {
               <img src="./cloudy.png" alt="" />
               <br />
               <br />
-              <br />
               Wed
               <br />
               23°C
@@ -86,14 +102,12 @@ function App() {
               <img src="./cloudy.png" alt="" />
               <br />
               <br />
-              <br />
               Thu
               <br />
               24°C
             </li>
             <li>
               <img src="./cloudy.png" alt="" />
-              <br />
               <br />
               <br />
               Fri
