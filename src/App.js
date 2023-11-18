@@ -3,7 +3,7 @@ import { useState } from "react";
 import axios from "axios";
 
 function App() {
-  let [date, setDate] = useState(updateDate());
+  let [date] = useState(updateDate());
   let [city, setCity] = useState("");
   let [temperature, setTemperature] = useState(null);
   let [description, setDescription] = useState(null);
