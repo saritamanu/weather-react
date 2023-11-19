@@ -2,7 +2,7 @@ import "./App.css";
 import { useState } from "react";
 import axios from "axios";
 
-function App() {
+export default function App() {
   let [date] = useState(updateDate());
   let [city, setCity] = useState("");
   let [temperature, setTemperature] = useState(null);
@@ -132,5 +132,3 @@ function App() {
     );
   }
 }
-
-export default App;
