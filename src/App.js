@@ -123,6 +123,7 @@ function App() {
       <div className="flex-parent">
         <div className="box"></div>
         <div className="box">
+          <p>Test</p>
           <form onSubmit={handleSubmit}>
             <input
               className="search"
