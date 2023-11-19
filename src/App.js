@@ -124,8 +124,13 @@ function App() {
         <div className="box"></div>
         <div className="box">
           <form onSubmit={handleSubmit}>
-            <input type="search" onChange={updateCity} />
-            <input type="submit" value="Search" />
+            <input
+              className="search"
+              type="search"
+              onChange={updateCity}
+              placeholder="Search city..."
+            />
+            <input className="submit" type="submit" value="Search" />
           </form>
         </div>
       </div>
