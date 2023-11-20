@@ -15,15 +15,7 @@ function App() {
     setDescription(response.data.weather[0].main);
     setHumidity(response.data.main.humidity);
     setWind(Math.round(response.data.wind.speed));
-
     console.log(response.data);
-  }
-
-  function handleSubmit(event) {
-    event.preventDefault();
-    let apiId = `96771e971243152d6b8948878c26`;
-    let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiId}adde&units=metric`;
-    axios.get(url).then(showTemperature);
   }
   function updateDate() {
     const today = new Date();
@@ -43,6 +35,14 @@ function App() {
     const day = days[today.getDay()];
     return `${day}, ${hours}:${minutes}`;
   }
+
+  function handleSubmit(event) {
+    event.preventDefault();
+    let apiId = `96771e971243152d6b8948878c26`;
+    let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiId}adde&units=metric`;
+    axios.get(url).then(showTemperature, updateDate);
+  }
+
   function updateCity(event) {
     setCity(event.target.value);
   }
@@ -67,6 +67,7 @@ function App() {
               type="search"
               onChange={updateCity}
               placeholder="Search city..."
+              autoFocus="on"
             />
             <input className="submit" type="submit" value="Search" />
           </form>
@@ -129,6 +130,7 @@ function App() {
               type="search"
               onChange={updateCity}
               placeholder="Search city..."
+              autoFocus="on"
             />
             <input className="submit" type="submit" value="Search" />
           </form>
