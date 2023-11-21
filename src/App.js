@@ -1,64 +1,50 @@
 import "./App.css";
 import { useState } from "react";
 import axios from "axios";
+import UpdateDate from "./UpdateDate";
 
 function App() {
-  let [date] = useState(updateDate());
+  let [ready, setReady] = useState(false);
+  let [weatherData, setWeatherData] = useState({});
   let [city, setCity] = useState("");
-  let [temperature, setTemperature] = useState(null);
-  let [description, setDescription] = useState(null);
-  let [humidity, setHumidity] = useState(null);
-  let [wind, setWind] = useState(null);
 
   function showTemperature(response) {
-    setTemperature(Math.round(response.data.main.temp));
-    setDescription(response.data.weather[0].main);
-    setHumidity(response.data.main.humidity);
-    setWind(Math.round(response.data.wind.speed));
+    setWeatherData({
+      temperature: Math.round(response.data.main.temp),
+      description: response.data.weather[0].main,
+      humidity: response.data.main.humidity,
+      wind: Math.round(response.data.wind.speed),
+      date: new Date(response.data.dt * 1000),
+    });
+    setReady(true);
     console.log(response.data);
-  }
-  function updateDate() {
-    const today = new Date();
-    const hours = today.getHours();
-    const minutes = today.getMinutes();
-
-    const days = [
-      "Sunday",
-      "Monday",
-      "Tuesday",
-      "Wednesday",
-      "Thursday",
-      "Friday",
-      "Saturday",
-    ];
-
-    const day = days[today.getDay()];
-    return `${day}, ${hours}:${minutes}`;
   }
 
   function handleSubmit(event) {
     event.preventDefault();
     let apiId = `96771e971243152d6b8948878c26`;
     let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiId}adde&units=metric`;
-    axios.get(url).then(showTemperature, updateDate);
+    axios.get(url).then(showTemperature);
   }
 
   function updateCity(event) {
     setCity(event.target.value);
   }
 
-  if (temperature != null) {
+  if (ready) {
     return (
       <div className="flex-parent">
         <div className="box">
-          <p>{date}</p>
+          <p>
+            <UpdateDate date={weatherData.date} />
+          </p>
           <br />
           <br />
           <br />
           <br />
           <h1 style={{ textTransform: "capitalize" }}>{city}</h1>
-          <p className="temperature">{temperature}°C</p>
-          <p className="description">{description}</p>
+          <p className="temperature">{weatherData.temperature}°C</p>
+          <p className="description">{weatherData.description}</p>
         </div>
         <div className="box">
           <form onSubmit={handleSubmit}>
@@ -74,11 +60,11 @@ function App() {
           <br />
           <br />
           <p className="humidity">
-            <b>Humidity:</b> {humidity}%{" "}
+            <b>Humidity:</b> {weatherData.humidity}%{" "}
           </p>
           <p className="wind">
             <b>Wind: </b>
-            {wind} km/h
+            {weatherData.wind} km/h
           </p>
 
           <br />
