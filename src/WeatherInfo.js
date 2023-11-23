@@ -1,8 +1,17 @@
-import React from "react";
+import { useState } from "react";
 import UpdateDate from "./UpdateDate";
 import App from "./App";
 
 export default function WeatherInfo(props) {
+  let [city, setCity] = useState("");
+
+  function handleSubmit(event) {
+    event.preventDefault();
+  }
+  function updateCity(event) {
+    setCity(event.target.value);
+  }
+
   return (
     <div className="flex-parent">
       <div className="box">
