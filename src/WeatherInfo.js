@@ -1,15 +1,13 @@
 import React from "react";
 import UpdateDate from "./UpdateDate";
-import Form from "./Form";
 import App from "./App";
-import "./App.css";
 
 export default function WeatherInfo(props) {
   return (
     <div className="flex-parent">
       <div className="box">
         <p>
-          <UpdateDate data={props.data.date} />
+          <UpdateDate date={props.data.date} />
         </p>
         <br />
         <br />
@@ -20,7 +18,16 @@ export default function WeatherInfo(props) {
         <p className="description">{props.data.description}</p>
       </div>
       <div className="box">
-        <Form data={props.defaultCity.city} />
+        <form onSubmit={handleSubmit}>
+          <input
+            className="search"
+            type="search"
+            onChange={updateCity}
+            placeholder="Search city..."
+            autoFocus="on"
+          />
+          <input className="submit" type="submit" value="Search" />
+        </form>
         <br />
         <br />
         <p className="humidity">
