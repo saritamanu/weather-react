@@ -5,7 +5,7 @@ import UpdateDate from "./UpdateDate";
 export default function WeatherInfo(props) {
   return (
     <div>
-      <div className="box">
+      <div>
         <p>
           <UpdateDate date={props.data.date} />
         </p>

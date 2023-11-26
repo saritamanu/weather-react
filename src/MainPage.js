@@ -34,7 +34,7 @@ export default function MainPage(props) {
 
   if (ready) {
     return (
-      <div>
+      <div className="box">
         <form onSubmit={handleSubmit}>
           <input
             className="search"
