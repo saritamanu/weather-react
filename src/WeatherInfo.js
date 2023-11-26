@@ -1,19 +1,10 @@
-import { useState } from "react";
+import React from "react";
+import "./App.css";
 import UpdateDate from "./UpdateDate";
-import App from "./App";
 
 export default function WeatherInfo(props) {
-  let [city, setCity] = useState("");
-
-  function handleSubmit(event) {
-    event.preventDefault();
-  }
-  function updateCity(event) {
-    setCity(event.target.value);
-  }
-
   return (
-    <div className="flex-parent">
+    <div>
       <div className="box">
         <p>
           <UpdateDate date={props.data.date} />
@@ -22,21 +13,11 @@ export default function WeatherInfo(props) {
         <br />
         <br />
         <br />
-        <h1 style={{ textTransform: "capitalize" }}>{city}</h1>
+        <h1>{props.data.city}</h1>
         <p className="temperature">{props.data.temperature}°C</p>
         <p className="description">{props.data.description}</p>
       </div>
       <div className="box">
-        <form onSubmit={handleSubmit}>
-          <input
-            className="search"
-            type="search"
-            onChange={updateCity}
-            placeholder="Search city..."
-            autoFocus="on"
-          />
-          <input className="submit" type="submit" value="Search" />
-        </form>
         <br />
         <br />
         <p className="humidity">
