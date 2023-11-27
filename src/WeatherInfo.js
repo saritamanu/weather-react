@@ -7,6 +7,7 @@ export default function WeatherInfo(props) {
     <div>
       <div>
         <p>
+          test
           <UpdateDate date={props.data.date} />
         </p>
         <br />
