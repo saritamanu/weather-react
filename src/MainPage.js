@@ -2,6 +2,7 @@ import "./App.css";
 import { useState } from "react";
 import axios from "axios";
 import WeatherInfo from "./WeatherInfo";
+import WeatherInfoSub from "./WeatherInfoSub";
 
 export default function MainPage(props) {
   let [ready, setReady] = useState(false);
@@ -22,6 +23,7 @@ export default function MainPage(props) {
   }
   function showTemperature(response) {
     setWeatherData({
+      ready: true,
       temperature: Math.round(response.data.main.temp),
       description: response.data.weather[0].main,
       humidity: response.data.main.humidity,
@@ -29,24 +31,28 @@ export default function MainPage(props) {
       date: new Date(response.data.dt * 1000),
       city: response.data.name,
     });
-    setReady(true);
   }
 
-  if (ready) {
+  if (weatherData.ready) {
     return (
-      <div className="box">
-        <form onSubmit={handleSubmit}>
-          <input
-            className="search"
-            type="search"
-            onChange={updateCity}
-            placeholder="Search city..."
-            autoFocus="on"
-          />
-          <input className="submit" type="submit" value="Search" />
-        </form>
-        <WeatherInfo data={weatherData} />
-        <br />
+      <div className="flex-parent">
+        <div className="box">
+          <form onSubmit={handleSubmit}>
+            <input
+              className="search"
+              type="search"
+              onChange={updateCity}
+              placeholder="Search city..."
+              autoFocus="on"
+            />
+            <input className="submit" type="submit" value="Search" />
+          </form>
+          <WeatherInfo data={weatherData} />
+          <br />
+        </div>
+        <div className="box">
+          <WeatherInfoSub data={weatherData} />
+        </div>
       </div>
     );
   } else {
