@@ -49,6 +49,7 @@ export default function MainPage(props) {
           </form>
           <WeatherInfo data={weatherData} />
           <br />
+          test
         </div>
         <div className="box">
           <WeatherInfoSub data={weatherData} />
