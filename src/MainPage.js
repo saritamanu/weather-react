@@ -23,7 +23,6 @@ export default function MainPage(props) {
   }
   function showTemperature(response) {
     setWeatherData({
-      ready: true,
       temperature: Math.round(response.data.main.temp),
       description: response.data.weather[0].main,
       humidity: response.data.main.humidity,
@@ -31,9 +30,10 @@ export default function MainPage(props) {
       date: new Date(response.data.dt * 1000),
       city: response.data.name,
     });
+    setReady(true);
   }
 
-  if (weatherData.ready) {
+  if (ready) {
     return (
       <div className="flex-parent">
         <div className="box">

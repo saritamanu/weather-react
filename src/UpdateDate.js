@@ -1,5 +1,3 @@
-import React from "react";
-
 export default function UpdateDate(props) {
   let hours = props.date.getHours();
   let minutes = props.date.getMinutes();
