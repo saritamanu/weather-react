@@ -11,15 +11,17 @@ export default function MainPage(props) {
 
   function search() {
     let apiId = `96771e971243152d6b8948878c26`;
-    let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiId}adde&units=metric`;
+    let url = `https://api.openweathermap.org/data/2.5/weather?q=${encodeURIComponent(
+      city
+    )}&appid=${apiId}adde&units=metric`;
     axios.get(url).then(showTemperature);
   }
   function handleSubmit(event) {
     event.preventDefault();
+    search();
   }
   function updateCity(event) {
     setCity(event.target.value);
-    search();
   }
   function showTemperature(response) {
     setWeatherData({
@@ -29,6 +31,7 @@ export default function MainPage(props) {
       wind: Math.round(response.data.wind.speed),
       date: new Date(response.data.dt * 1000),
       city: response.data.name,
+      icon: response.data.weather[0].description,
     });
     setReady(true);
   }
@@ -49,7 +52,6 @@ export default function MainPage(props) {
           </form>
           <WeatherInfo data={weatherData} />
           <br />
-          test
         </div>
         <div className="box">
           <WeatherInfoSub data={weatherData} />
