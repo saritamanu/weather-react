@@ -31,9 +31,10 @@ export default function MainPage(props) {
       wind: Math.round(response.data.wind.speed),
       date: new Date(response.data.dt * 1000),
       city: response.data.name,
-      icon: response.data.weather[0].description,
+      icon: response.data.weather[0].icon,
     });
     setReady(true);
+    console.log(weatherData);
   }
 
   if (ready) {

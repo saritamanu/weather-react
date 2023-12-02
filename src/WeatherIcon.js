@@ -21,9 +21,11 @@ export default function WeatherIcon(props) {
     "50d": "mist",
     "50n": "mist",
   };
+
+  let icon = codeMapping[props.code];
   return (
     <img
-      src="https://bmcdn.nl/assets/weather-icons/v2.0/line/clear-night.svg"
+      src={`https://bmcdn.nl/assets/weather-icons/v2.0/line/${icon}.svg`}
       alt="Partly Cloudy Day"
       height="100"
     />

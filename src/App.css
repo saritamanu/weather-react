@@ -79,6 +79,14 @@ form {
   background: rgb(153, 153, 153);
 }
 
+.date {
+  text-align: right;
+}
+
+.icon {
+  height: 200px;
+}
+
 h1 {
   text-align: left;
   font-size: 45px;

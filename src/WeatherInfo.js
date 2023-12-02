@@ -7,7 +7,7 @@ export default function WeatherInfo(props) {
   return (
     <div>
       <div>
-        <p>
+        <p className="date">
           <UpdateDate date={props.data.date} />
         </p>
         <WeatherIcon code={props.data.icon} />
