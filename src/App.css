@@ -83,10 +83,6 @@ form {
   text-align: right;
 }
 
-.icon {
-  height: 200px;
-}
-
 h1 {
   text-align: left;
   font-size: 45px;
@@ -99,6 +95,18 @@ h1 {
   font-size: 30px;
   margin: 0;
   height: 35px;
+}
+
+.unit {
+  font-size: 20px;
+}
+
+.unit a {
+  text-decoration: none;
+}
+
+.unit a:hover {
+  text-decoration: underline;
 }
 
 .humidity,
