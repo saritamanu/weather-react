@@ -25,6 +25,7 @@ export default function MainPage(props) {
   }
   function showTemperature(response) {
     setWeatherData({
+      coordinates: response.data.coord,
       temperature: Math.round(response.data.main.temp),
       description: response.data.weather[0].main,
       humidity: response.data.main.humidity,

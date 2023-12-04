@@ -1,4 +1,6 @@
 import React from "react";
+import WeatherForecast from "./WeatherForecast";
+
 import "./App.css";
 
 export default function WeatherInfoSub(props) {
@@ -15,40 +17,7 @@ export default function WeatherInfoSub(props) {
           {props.data.wind} km/h
         </p>
         <br />
-        <ul>
-          <li>
-            <img src="./cloudy.png" alt="" />
-            <br />
-            <br />
-            Tues
-            <br />
-            25°C
-          </li>
-          <li>
-            <img src="./cloudy.png" alt="" />
-            <br />
-            <br />
-            Wed
-            <br />
-            23°C
-          </li>
-          <li>
-            <img src="./cloudy.png" alt="" />
-            <br />
-            <br />
-            Thu
-            <br />
-            24°C
-          </li>
-          <li>
-            <img src="./cloudy.png" alt="" />
-            <br />
-            <br />
-            Fri
-            <br />
-            23°C
-          </li>
-        </ul>
+        <WeatherForecast coordinates={props.data.coordinates} />
       </div>
     </div>
   );

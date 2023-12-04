@@ -44,13 +44,15 @@
 }
 
 .box {
-  width: 290px;
-  height: 316px;
-  background-color: #d9d9d9;
+  width: 300px;
+  height: 350px;
+  background-color: #8e9aaf;
   border-radius: 20px;
   margin: 5px;
   margin-top: 15%;
   padding: 20px;
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2);
+  opacity: 0.9;
 }
 
 form {
@@ -64,6 +66,7 @@ form {
   height: 25px;
   padding-left: 5px;
   font-size: 15px;
+  box-shadow: 7px 6px 20px rgba(0, 0, 0, 0.2);
 }
 
 .submit {
@@ -72,6 +75,8 @@ form {
   height: 25px;
   margin-left: 2px;
   font-size: 15px;
+  margin-bottom: 5px;
+  box-shadow: 7px 6px 20px rgba(0, 0, 0, 0.2);
 }
 
 .submit:hover {
@@ -80,7 +85,13 @@ form {
 }
 
 .date {
+  margin: 0;
   text-align: right;
+}
+
+.mainIcon {
+  display: flex;
+  height: 160px;
 }
 
 h1 {
@@ -88,6 +99,7 @@ h1 {
   font-size: 45px;
   letter-spacing: 8px;
   margin: 0;
+  height: 60px;
 }
 
 .temperature,
@@ -113,24 +125,4 @@ h1 {
 .wind {
   font-size: 25px;
   margin: 0;
-}
-ul {
-  padding-left: 0px;
-}
-ul li {
-  display: inline-block;
-  text-align: center;
-  padding-top: 10px;
-  margin: 5px;
-  height: 100px;
-  width: 60px;
-  border: none;
-  border-radius: 10px;
-  background: rgb(153, 153, 153);
-}
-
-li:hover {
-  transition: 0.5s;
-  transform: scale(1.1);
-  background: rgba(153, 153, 153, 0.5);
 }

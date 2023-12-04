@@ -27,7 +27,6 @@ export default function WeatherIcon(props) {
     <img
       src={`https://bmcdn.nl/assets/weather-icons/v2.0/line/${icon}.svg`}
       alt="Partly Cloudy Day"
-      height="100"
     />
   );
 }
