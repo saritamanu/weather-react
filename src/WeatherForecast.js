@@ -7,10 +7,10 @@ export default function WeatherForecast(props) {
   function handleResponse(response) {
     console.log(response.data);
   }
-  let apiId = `96771e971243152d6b8948878c26`;
+  let apiId = `99b8f9330a1bfba3a85e523fd3c2e528`;
   let latitude = props.coordinates.lat;
   let longitude = props.coordinates.lon;
-  let url = `https://api.openweathermap.org/data/2.5/forecast/daily?lat=${latitude}&lon=${longitude}&appid=${apiId}`;
+  let url = `https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&appid=${apiId}`;
   axios.get(url).then(handleResponse);
 
   return (
