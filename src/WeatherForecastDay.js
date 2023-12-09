@@ -1,4 +1,3 @@
-import { delay } from "q";
 import React from "react";
 import WeatherIcon from "./WeatherIcon";
 import "./WeatherForecast.css";
