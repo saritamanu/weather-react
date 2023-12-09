@@ -1,7 +1,8 @@
 ul {
+  display: inline-block;
   padding-left: 0px;
 }
-ul li {
+li {
   display: inline-block;
   text-align: center;
   padding-top: 10px;
