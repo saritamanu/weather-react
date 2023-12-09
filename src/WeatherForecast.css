@@ -11,14 +11,14 @@ li {
   width: 65px;
   border: none;
   border-radius: 10px;
-  background: #7d7b8093;
+  background: #7ea0ea;
   box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2);
 }
 
 li:hover {
   transition: 0.5s;
   transform: scale(1.1);
-  background: rgba(214, 212, 243, 0.397);
+  background: #aec6f8;
 }
 
 .icon {
